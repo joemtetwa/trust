@@ -11,10 +11,13 @@ import android.util.Log;
 import android.view.View;
 import android.widget.TextView;
 
-public class ContactsActivity extends AppCompatActivity{
+import static android.app.Activity.RESULT_OK;
+
+public class ContactsActivity extends AppCompatActivity {
     private static final int RESULT_PICK_CONTACT = 85500;
     private TextView textView1;
     private TextView textView2;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -30,6 +33,7 @@ public class ContactsActivity extends AppCompatActivity{
                 ContactsContract.CommonDataKinds.Phone.CONTENT_URI);
         startActivityForResult(contactPickerIntent, RESULT_PICK_CONTACT);
     }
+
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         // check whether the result is ok

@@ -20,6 +20,13 @@ allprojects {
     }
 }
 
+allprojects {
+    repositories {
+        // ...
+        maven { url "https://maven.google.com" }
+    }
+}
+
 task clean(type: Delete) {
     delete rootProject.buildDir
 }
